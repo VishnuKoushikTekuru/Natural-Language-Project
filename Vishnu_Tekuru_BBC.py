@@ -754,7 +754,7 @@ def main():
     
     try:
         # Initialize analyzer
-        analyzer = BBCAnalyzer(r"C:\Users\koush\Desktop\BBC\bbc") 
+        analyzer = BBCAnalyzer(r"C:\Users\koush\Desktop\BBC\bbc") #Change the path as needed. 
         
         # Run complete analysis
         results = analyzer.run_complete_analysis()
