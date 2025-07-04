@@ -745,6 +745,26 @@ class BBCAnalyzer:
             print(f"Error classifying text: {e}")
             return None
 
+import requests
+import zipfile
+import io
+
+def download_and_extract_dataset(token, zip_url, extract_to="bbc"):
+    headers = {"Authorization": f"token {token}"}
+    print("Downloading dataset zip from GitHub...")
+
+    try:
+        response = requests.get(zip_url, headers=headers)
+        response.raise_for_status()
+        
+        with zipfile.ZipFile(io.BytesIO(response.content)) as zip_ref:
+            zip_ref.extractall(extract_to)
+        
+        print(f"✓ Dataset extracted to: {extract_to}")
+        return extract_to
+    except Exception as e:
+        print(f"✗ Failed to download or extract dataset: {e}")
+        return None
 
 # In[8]:
 
@@ -754,7 +774,16 @@ def main():
     
     try:
         # Initialize analyzer
-        analyzer = BBCAnalyzer(r"C:\Users\koush\Desktop\BBC\bbc") #Change the path as needed. 
+        # GitHub raw zip URL (e.g., from "Raw" link of your ZIP file)
+        ZIP_URL = "https://raw.githubusercontent.com/yourusername/yourrepo/main/bbc.zip"
+        TOKEN = "ghp_YourGitHubTokenHere"
+        dataset_path = download_and_extract_dataset(TOKEN, ZIP_URL)
+        if not dataset_path:
+            print("Failed to prepare dataset.")
+            return
+        analyzer = BBCAnalyzer(dataset_path)
+
+        ##analyzer = BBCAnalyzer(r"C:\Users\koush\Desktop\BBC\bbc") # if zip URL doesn't work try this line by changing the path as needed. 
         
         # Run complete analysis
         results = analyzer.run_complete_analysis()
