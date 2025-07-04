@@ -4,7 +4,8 @@
 # ##Vishnu Koushik Tekuru, koushiktekuru@gmail.com. HMLR 2025 Data Scientist Challenge
 
 # In[3]:
-
+#pip install --upgrade pip
+#pip install nltk
 
 import os
 import re
@@ -754,7 +755,7 @@ def main():
     
     try:
         # Initialize analyzer
-        analyzer = BBCAnalyzer(r"C:\Users\koush\Desktop\BBC\bbc") 
+        analyzer = BBCAnalyzer(r"C:\Users\koush\Desktop\BBC\bbc") # change the path accordingly
         
         # Run complete analysis
         results = analyzer.run_complete_analysis()
