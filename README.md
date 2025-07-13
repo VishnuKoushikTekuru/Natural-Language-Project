@@ -47,4 +47,4 @@ To run this notebook, you need Python 3 and the following packages:
 pip install pandas numpy nltk scikit-learn
 
 ```
-***You also need to Change the path before Executing the code according to you path as I performed my local machine***
+***You also need to Change the path before Executing the code according to your path as I performed in my local machine***
