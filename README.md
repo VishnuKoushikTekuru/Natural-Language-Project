@@ -1,6 +1,5 @@
-# HMLR-2025-Data-Scientist-Challenge
 
-This project was developed as part of the **HMLR (HM Land Registry) 2025 Data Scientist Challenge**, focusing on natural language processing (NLP) techniques applied to textual data, using Python and popular libraries like NLTK and Scikit-learn.
+This project focusing on natural language processing (NLP) techniques applied to textual data, using Python and popular libraries like NLTK and Scikit-learn.
 
 ---
 
